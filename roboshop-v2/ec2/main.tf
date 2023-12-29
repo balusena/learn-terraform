@@ -64,7 +64,7 @@ resource "null_resource" "ansible" {
 
     inline = [
       "sudo labauto ansible",
-      "ansible-pull -i localhost, -U https://github.com/balusena/roboshop-ansible main.yml -e env=dev -e role_name=${var.name}"
+      "ansible-playbook main.yml -e ansible_user=centos -e ansible_password=DevOps321 -e role_name=${var.name} -e env=dev -i ${var.name}-dev.robobal.store,"
     ]
   }
 }
