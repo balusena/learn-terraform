@@ -46,8 +46,7 @@ resource "aws_route53_record" "www" {
   zone_id = "Z09157091J32F5PJ5K67Y"
   name    = "${var.name}-dev"
   type    = "A"
-  ttl     = 300
-
+  ttl     = 30
   records = [aws_instance.web.private_ip]
 }
 
